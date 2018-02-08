@@ -14,6 +14,7 @@
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
     "dva": "^2.1.0",
+    "keymaster": "^1.6.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
