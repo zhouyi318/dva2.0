@@ -1,0 +1,25 @@
+/*
+ * @Author: 周毅 
+ * @Date: 2018-02-07 14:39:32 
+ * @Last Modified by: 周毅
+ * @Last Modified time: 2018-02-07 15:12:40
+ */
+ /* 修改蚂蚁金服样式，必须在外层嵌套私有 classname */
+ :global{
+    .homeUserList{
+        .am-list-body{
+            .am-list-item .am-list-line .am-list-extra{
+                flex-basis:70%
+            }
+            
+        }
+    }
+    .demo2Horizontal{
+        :global(.am-list-arrow){
+            margin: 0 !important;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
