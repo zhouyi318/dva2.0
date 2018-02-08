@@ -2,25 +2,25 @@
  * @Author: 周毅 
  * @Date: 2018-02-07 14:40:25 
  * @Last Modified by: 周毅
- * @Last Modified time: 2018-02-08 11:20:36
+ * @Last Modified time: 2018-02-08 16:21:42
  */
-import 'babel-polyfill'
-const path = require('path');
-const fs = require('fs');
+import 'babel-polyfill';
+import path from 'path';
+import fs from 'fs';
+import entryConfig from './debugConfig/index';
 
-const svgSpriteDirs = [
+
+let [ entryAllArray, entryArray] = [[],[]]
+
+let svgSpriteDirs = [
   require.resolve('antd-mobile').replace(/warn\.js$/, ''),
   path.resolve(__dirname, 'public/svg/'),
 ];
 
-const roadhogConfig = {
-  /* 切换入口 */
-  entry: {
-    // "demo1": `${__dirname}/src/App/DEMO/Demo1/entry.js`,
-    // "demo2": `${__dirname}/src/App/DEMO/Demo2/entry.js`,
-    "demo3": `${__dirname}/src/App/DEMO/Demo3/entry.js`,
-  },
+export default {
+  entry: getEntry(),
   publicPath: '',
+  theme: `${__dirname}/theme.config.js`,
   svgSpriteLoaderDirs: svgSpriteDirs,
   disableCSSModules: false,
   multipage: true,
@@ -47,4 +47,48 @@ const roadhogConfig = {
   }
 }
 
-export default roadhogConfig
+function getEntry() {
+  let entry = {}
+  
+  readDirSync(`${__dirname}/src/App`)
+  
+  getProEntry()
+
+  entryAllArray.map(item=>{
+    entryArray.map(key=>{
+      if(item.indexOf(key) != -1){
+        entry[item.split('App/')[1]] = `${item}/entry.js`
+      }
+    })
+  })
+
+  return entry
+}
+
+function getProEntry(){
+  for(let key in entryConfig){
+    if (entryConfig.hasOwnProperty(key)) {
+      entryArray.push(key)
+    } 
+  }
+}
+
+function readDirSync(path, callback) {
+  let pa = fs.readdirSync(path);
+  pa.forEach(function(ele, index) {
+    let info = fs.statSync(path + "/" + ele)
+    if (info.isDirectory()) {
+      readDirSync(path + "/" + ele);
+    } else {
+      if (ele.indexOf('entry') != '-1') {
+        entryAllArray.push(path)
+      }
+    }
+  })
+}
+
+
+
+
+
+
