@@ -17,7 +17,7 @@
 │ ├── /services/            # 公共数据接口
 │ ├── /themes/              # 公共主题
 │ ├───/public/              # 静态文件
-│ ├───/public/svg           # svg存放目录
+│ │ ├───/svg/               # svg存放目录
 │ ├── /utils/               # 公共工具函数 
 │ │ ├── index.ejs           # HTML模板
 ├── package.json            # 项目信息

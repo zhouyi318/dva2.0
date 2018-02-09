@@ -2,13 +2,14 @@
  * @Author: 周毅 
  * @Date: 2018-02-07 14:40:32 
  * @Last Modified by: 周毅
- * @Last Modified time: 2018-02-08 11:20:17
+ * @Last Modified time: 2018-02-09 11:14:11
  */
 
 // 引入 dva、connect、router、Switch、keymaster
 import dva, {connect} from 'dva';
 import {Router, Route, Switch} from 'dva/router';
 import key from 'keymaster';
+import Myicon from 'components/Myicon';
 import styles from './index.less';
 
 // 初始化一个app
@@ -75,16 +76,17 @@ const Count = (props) => {
             <div className={styles.count}>商品数量： {props.count}
             </div>
             <div className={styles.toggle}>
+            
                 <button
                     className={styles.add}
                     onClick={() => {
                     props.dispatch({type: 'count/todo'})
-                }}>+</button>
+                }}><Myicon type="baoxiao" />}</button>
                 <button
                     className={styles.minus}
                     onClick={() => {
                     props.dispatch({type: 'count/minus'})
-                }}>-</button>
+                }}><Myicon type="wode" />}</button>
             </div>
         </div>
     )

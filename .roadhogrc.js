@@ -2,7 +2,7 @@
  * @Author: 周毅 
  * @Date: 2018-02-07 14:40:25 
  * @Last Modified by: 周毅
- * @Last Modified time: 2018-02-08 16:21:42
+ * @Last Modified time: 2018-02-09 11:18:45
  */
 import 'babel-polyfill';
 import path from 'path';
@@ -14,7 +14,7 @@ let [ entryAllArray, entryArray] = [[],[]]
 
 let svgSpriteDirs = [
   require.resolve('antd-mobile').replace(/warn\.js$/, ''),
-  path.resolve(__dirname, 'public/svg/'),
+  path.resolve(__dirname, 'src/public/svg/'),
 ];
 
 export default {
