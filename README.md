@@ -7,8 +7,6 @@
 ├── /dist/                  # 打包后文件
 ├── /mock/                  # 数据mock的接口文件
 ├── /node_modules/          # 依赖包
-├── /public/                # 静态文件
-├── /public/svg             # svg存放目录
 ├── /src/                   # 项目源码
 │ ├── /App/                 # 项目总目录
 │ │ ├── /DEMO/              # 项目平台
@@ -18,6 +16,8 @@
 │ ├── /models/              # 公共数据模型
 │ ├── /services/            # 公共数据接口
 │ ├── /themes/              # 公共主题
+│ ├───/public/              # 静态文件
+│ ├───/public/svg           # svg存放目录
 │ ├── /utils/               # 公共工具函数 
 │ │ ├── index.ejs           # HTML模板
 ├── package.json            # 项目信息
@@ -48,13 +48,13 @@
 ```
 
 ## Demo1
-Demo1 :![Image text](https://github.com/zhouyi318/dva2.0/blob/master/public/Demo1.png)
+Demo1 :![Image text](https://github.com/zhouyi318/dva2.0/blob/master/src/public/Demo1.png)
 ## Demo2
-![Image text](https://github.com/zhouyi318/dva2.0/blob/master/public/Demo2_1.png)
-![Image text](https://github.com/zhouyi318/dva2.0/blob/master/public/Demo2_2.png)
+![Image text](https://github.com/zhouyi318/dva2.0/blob/master/src/public/Demo2_1.png)
+![Image text](https://github.com/zhouyi318/dva2.0/blob/master/src/public/Demo2_2.png)
 ## Demo3
-![Image text](https://github.com/zhouyi318/dva2.0/blob/master/public/Demo3_1.png)
-![Image text](https://github.com/zhouyi318/dva2.0/blob/master/public/Demo3_2.png)
+![Image text](https://github.com/zhouyi318/dva2.0/blob/master/src/public/Demo3_1.png)
+![Image text](https://github.com/zhouyi318/dva2.0/blob/master/src/public/Demo3_2.png)
 
 ## 启动项目方法
 ```
@@ -68,7 +68,9 @@ Demo1 :![Image text](https://github.com/zhouyi318/dva2.0/blob/master/public/Demo
 ## 项目打包
 ```
 1、修改 .roadhogrc.js 入口（单项目其它注销，多项目解开）
-2、npm run build
+2、npm run build (打生产包)
+3、npm run build:tool (打带有控制台的包)
+4、npm run build:charts (打带有Echarts图分析包内存包)
 ```
 
 
