@@ -26,7 +26,7 @@
 
 ### 项目入口
 ```
-在根目录 .roadhogrc.js 中的 entry 下 
+在根目录debugConfig/index.js下，通过注释代码方法，选择入口（可多选打包）
 ```
 
 ### Demo
