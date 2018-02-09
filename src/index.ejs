@@ -3,9 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
-  <title>DEMO</title>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <% let [n,j,reg,cssObj,jsObj] = [0,0,new RegExp("common"),htmlWebpackPlugin.files.css,htmlWebpackPlugin.files.js] %>
+
+  <% if( process.env.NODE_ENV === 'testing'|| process.env.NODE_ENV === 'production'|| process.env.NODE_ENV === 'tool' || process.env.NODE_ENV === 'charts' ) {%>
+    <% for(n; n<cssObj.length; n++) {%>
+            <link rel="stylesheet" href="<%= cssObj[n] %>">
+    <% } %>
+  <% } %>
 </head>
 <body>
   <div id="root"></div>
+  <% if( process.env.NODE_ENV === 'testing'|| process.env.NODE_ENV === 'production'|| process.env.NODE_ENV === 'tool' || process.env.NODE_ENV === 'charts' ) {%>
+    <%  for(j; j<jsObj.length; j++) { %>
+        <script src="<%= jsObj[j] %>"></script>
+    <% } %>
+  <% } %>
 </body>
 </html>
