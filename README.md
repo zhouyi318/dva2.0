@@ -58,10 +58,10 @@ Demo1 :![Image text](https://github.com/zhouyi318/dva2.0/blob/master/src/public/
 
 ## 启动项目方法
 ```
-1、克隆 clone git ***@....
-2、进入文件夹 cd ...
+1、克隆 git clone git@github.com:zhouyi318/dva2.0.git
+2、进入文件夹 cd dva2.0
 3、下载依赖 yarn || npm i 
-4、修改 .roadhogrc.js 入口
+4、修改 /debugConfig/index.js 入口
 5、启动 yarn start || npm start
 ```
 
@@ -72,5 +72,3 @@ Demo1 :![Image text](https://github.com/zhouyi318/dva2.0/blob/master/src/public/
 3、npm run build:tool (打带有控制台的包)
 4、npm run build:charts (打带有Echarts图分析包内存包)
 ```
-
-
