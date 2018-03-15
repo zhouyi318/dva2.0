@@ -60,7 +60,7 @@ Demo1 :![Image text](https://github.com/zhouyi318/dva2.0/blob/master/src/public/
 ```
 1、克隆 git clone git@github.com:zhouyi318/dva2.0.git
 2、进入文件夹 cd dva2.0
-3、下载依赖 yarn || npm i 
+3、下载依赖 yarn 或者 npm i 
 4、修改 /debugConfig/index.js 入口
 5、启动 yarn start || npm start
 ```
